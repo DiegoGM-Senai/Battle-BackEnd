@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: "localhost",
+    HOST: "https://battlemode-backend.herokuapp.com/",
     USER: "postgres",
     PASSWORD: "senai",
     DB: "users_db",
