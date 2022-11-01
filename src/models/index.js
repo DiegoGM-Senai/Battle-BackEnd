@@ -1,9 +1,9 @@
 
-
+try{
 const dbConfig = require('../config/db.config')
 
 const Sequelize = require('sequelize')
-try{
+
 const sequelize = new Sequelize(
     dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
         host: dbConfig.HOST,
@@ -18,9 +18,6 @@ const sequelize = new Sequelize(
     }
 )
 console.log(sequelize)
-}catch(e){
-throw e.message
-}
 
 const db = {}
 db.Sequelize = Sequelize
@@ -38,4 +35,7 @@ db.jogo.sync()
 
 
 module.exports = db
+}catch(e){
+throw e.message
+}
  
