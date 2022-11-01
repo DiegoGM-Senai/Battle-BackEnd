@@ -8,7 +8,8 @@ const timeRouter = require('./routers/time.router')
 const torneioRouter = require('./routers/torneio.router')
 const jogoRouter = require('./routers/jogo.router')
 
-app.use(express.urlencoded({extended: true}))
+try{
+  app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(express.json({type: 'application/vnd.api+json'}))
 app.use(cors())
@@ -20,3 +21,7 @@ app.use('/api/', torneioRouter)
 app.use('/api/', jogoRouter)
 
 module.exports = app
+}catch(e){
+throw e.message
+}
+  
