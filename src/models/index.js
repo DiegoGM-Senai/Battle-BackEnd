@@ -33,3 +33,4 @@ db.jogo.sync()
 
 
 module.exports = db
+ 
