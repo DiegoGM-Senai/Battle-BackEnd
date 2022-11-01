@@ -17,6 +17,7 @@ const sequelize = new Sequelize(
         }
     }
 )
+console.log(sequelize)
 }catch(e){
 throw e.message
 }
