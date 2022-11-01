@@ -6,7 +6,7 @@ const Sequelize = require('sequelize')
 const sequelize = new Sequelize(
     dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
         host: dbConfig.HOST,
-        port: dbConfig.PORT,
+        port: dbConfig.process.env.PORT,
         dialect: dbConfig.DIALECT,
         pool:{
             max: dbConfig.pool.max,
