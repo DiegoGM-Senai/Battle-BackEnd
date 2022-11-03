@@ -1,15 +1,21 @@
 
-try{
 const dbConfig = require('../config/db.config')
 
 const Sequelize = require('sequelize')
-
-const sequelize = new Sequelize(
-    dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-        host: dbConfig.HOST,
-        port: process.env.PORT,
+const sequelize = new Sequelize({
+       database:  dbConfig.DB,
+       username: dbConfig.USER,
+        password: dbConfig.PASSWORD,
+        host:dbConfig.HOST,
+        port: 5432,
         dialect: dbConfig.DIALECT,
-        pool:{
+        dialectOptions:{
+        ssl:{
+            require:true,
+            rejectUnathorized:false
+        }
+        },
+        pool: {
             max: dbConfig.pool.max,
             min: dbConfig.pool.min,
             acquire: dbConfig.pool.acquire,
@@ -17,7 +23,6 @@ const sequelize = new Sequelize(
         }
     }
 )
-
 
 const db = {}
 db.Sequelize = Sequelize
@@ -35,7 +40,5 @@ db.jogo.sync()
 
 
 module.exports = db
-}catch(e){
-throw e.message
-}
+
  
