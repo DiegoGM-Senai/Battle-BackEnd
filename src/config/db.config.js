@@ -3,7 +3,7 @@ module.exports = {
     USER: "wrsktfcfvnsayt",
     PASSWORD: "1a6162821eab9f746f6e2ca3f9201d6661ce4a8315fa128f643fe9f7c98d4a80",
     DB: "d53rjnqr3e87nc",
-    DIALECT : "postgres",
+    DIALECT : "postgresql-flat-77985",
     pool: {
         max: 5,
         min: 0,
