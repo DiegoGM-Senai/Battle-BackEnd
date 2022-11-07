@@ -32,7 +32,7 @@ exports.create = async(nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissao
     }
 }
 
-exports.update = async(nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas) => {
+exports.update = async(id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas) => {
     try{
         await Time.update({
             nome: nome, tag: tag, logo: logo, imgFundo: imgFundo, equipeAtiva: equipeAtiva, reserva: reserva, comissaoTecnica: comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas: conquistas
