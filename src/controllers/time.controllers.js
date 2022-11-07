@@ -53,7 +53,7 @@ exports.update = async (request, response) => {
         const id = parseInt(request.params.id)
         const { nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas  } = request.body
 
-        await TimeService.update( nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas )
+        await TimeService.update( id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas )
         return response.status(201).json({
             message: 'time alterado com sucesso',
             body: {
