@@ -60,8 +60,7 @@ exports.update = async (request, response) => {
         return response.status(201).json({
             message: 'Usuários alterado com sucesso',
             body: {
-                username: username,
-                email: email
+username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status, personalizacao: personalizacao, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao
             }
         })
     } catch (e) {
