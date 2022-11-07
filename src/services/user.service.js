@@ -32,7 +32,7 @@ exports.create = async(username, icon, email, password, redes, biografia, status
     }
 }
 
-exports.update = async(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao) => {
+exports.update = async(id, username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao) => {
     try{
         await User.update({
             username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status, personalizacao: personalizacao, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao
