@@ -4,7 +4,7 @@ const User = db.users
 exports.findAll = async () => {
     try{
         const users = await User.findAll({
-            attributes:['id', 'username', 'icon', 'email', 'password']
+            attributes:['id', 'username', 'icon', 'email', 'password', 'redes', 'biografia', 'status', 'personalizacao', 'imgFundo', 'imgFundoDois', 'dataCriacao']
         })
         return users
     }catch(e){
@@ -15,7 +15,7 @@ exports.findAll = async () => {
 exports.findByPk = async(id) => {
     try{
         const users = await User.findByPk(id, {
-            attributes:['id', 'username', 'icon', 'email', 'password']
+            attributes:['id', 'username', 'icon', 'email', 'password', 'redes', 'biografia', 'status', 'personalizacao', 'imgFundo', 'imgFundoDois', 'dataCriacao']
         })
         return users
     }catch(e){
@@ -23,19 +23,19 @@ exports.findByPk = async(id) => {
     }
 }
 
-exports.create = async(username, icon, email, password) => {
+exports.create = async(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao) => {
     try{
-        const user = await User.create({username: username, icon: icon, email: email, password: password})
+        const user = await User.create({username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status, personalizacao: personalizacao, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao})
         return user
     }catch(e){
         throw Error('Erro ao inserir o usuário: ' + username + ' ERROR: ' + e.message)
     }
 }
 
-exports.update = async(id, username, icon, email, password) => {
+exports.update = async(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao) => {
     try{
         await User.update({
-            username:username, email: email, icon: icon, password: password
+            username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status, personalizacao: personalizacao, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao
         }, {where: {id: id}})
 
     }catch(e){
