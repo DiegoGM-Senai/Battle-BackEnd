@@ -23,6 +23,34 @@ module.exports = (sequelize, Sequelize) => {
         password: {
             type: Sequelize.STRING,
             notNull: true
+        },
+        redes: {
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        biografia:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        status:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        personalizacao:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        imgFundo:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        imgFundoDois:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        dataCriacao:{
+            type:Sequelize.STRING,
+            notNull: true
         }
 
     },
