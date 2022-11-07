@@ -35,8 +35,8 @@ exports.findByPk = async (request, response) => {
 
 exports.create = async (request, response) => {
     try{
-        const {username, icon, email, password} = request.body
-        const user = await userService.create(username, icon, email, password)
+        const {username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao} = request.body
+        const user = await userService.create(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao)
         return response.status(201).json({
             message: 'Usuários listados com sucesso',
             body: {
@@ -54,9 +54,9 @@ exports.create = async (request, response) => {
 exports.update = async (request, response) => {
     try{
         const id = parseInt(request.params.id)
-        const {username, icon, email, password} = request.body
+        const {username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao} = request.body
 
-        await userService.update(username, email, password)
+        await userService.update(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao)
         return response.status(201).json({
             message: 'Usuários alterado com sucesso',
             body: {
