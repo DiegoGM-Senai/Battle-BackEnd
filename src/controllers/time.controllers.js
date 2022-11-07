@@ -57,10 +57,7 @@ exports.update = async (request, response) => {
         return response.status(201).json({
             message: 'time alterado com sucesso',
             body: {
-              nome: nome,
-              tag: tag,
-              logo: logo,
-              imgFundo: imgFundo
+                nome:nome, tag:tag ,logo:logo, imgFundo:imgFundo, equipeAtiva:equipeAtiva, reserva:reserva, comissaoTecnica:comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas:conquistas
             }
         })
     } catch (e) {
