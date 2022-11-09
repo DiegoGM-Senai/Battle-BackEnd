@@ -32,7 +32,7 @@ exports.create = async (nome, logo, descricaoLonga, descricaoBreve, imgFundo, th
     }
 }
 
-exports.update = async (nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId) => {
+exports.update = async (id ,nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId) => {
     try {
         await Torneio.update({
             nome: nome, logo: logo, imgFundo: imgFundo, descricaoLonga: descricaoLonga, descricaoBreve: descricaoBreve, thumbnail: thumbnail, participantes: participantes, gameId: gameId
