@@ -56,7 +56,7 @@ exports.update = async (request, response) => {
         const id = parseInt(request.params.id)
         const { nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId } = request.body
 
-        await torneioService.update(nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId)
+        await torneioService.update(id, nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId)
         return response.status(201).json({
             message: 'torneio alterado com sucesso',
             body: {
