@@ -29,7 +29,7 @@ module.exports = (sequelize, Sequelize) => {
             notNull: true
         },
         biografia:{
-            type: Sequelize.STRING,
+            type: Sequelize.STRING(1000),
             notNull: true
         },
         status:{
