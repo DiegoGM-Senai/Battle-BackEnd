@@ -36,7 +36,19 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             notNull: true
         },
-        personalizacao:{
+        corP:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        corS:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        favoritados:{
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        conquistas:{
             type: Sequelize.STRING,
             notNull: true
         },
