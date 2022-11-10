@@ -25,7 +25,7 @@ exports.findByPk = async(id) => {
 
 exports.create = async(username, icon, email, password, twitter, instagram, discord, twitch, biografia, status, corP, corS, favoritados, conquistas, imgFundo, imgFundoDois, dataCriacao) => {
     try{
-        const user = await User.create({username: username, icon: icon, email: email, password: password, twitter: twitter, instagram: instagram, discord: discord, twitter: twitter, biografia: biografia, status: status,  corP: corP, corS: corS, favoritados: favoritados, conquistas: conquistas, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao})
+        const user = await User.create({username: username, icon: icon, email: email, password: password, twitter: twitter, instagram: instagram, discord: discord, twitch: twitch, biografia: biografia, status: status,  corP: corP, corS: corS, favoritados: favoritados, conquistas: conquistas, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao})
         return user
     }catch(e){
         throw Error('Erro ao inserir o usuário: ' + username + ' ERROR: ' + e.message)
