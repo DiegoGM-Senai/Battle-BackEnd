@@ -35,8 +35,8 @@ exports.findByPk = async (request, response) => {
 
 exports.create = async (request, response) => {
     try{
-        const {username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao} = request.body
-        const user = await userService.create(username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao)
+        const {username, icon, email, password, redes, biografia, status, corP, corS, favoritados, conquistas, imgFundo, imgFundoDois, dataCriacao} = request.body
+        const user = await userService.create(username, icon, email, password, redes, biografia, status, corP, corS, favoritados, conquistas, imgFundo, imgFundoDois, dataCriacao)
         return response.status(201).json({
             message: 'Usuários listados com sucesso',
             body: {
@@ -54,13 +54,13 @@ exports.create = async (request, response) => {
 exports.update = async (request, response) => {
     try{
         const id = parseInt(request.params.id)
-        const {username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao} = request.body
+        const {username, icon, email, password, redes, biografia, status,  corP, corS, favoritados, conquistas, imgFundo, imgFundoDois, dataCriacao} = request.body
 
-        await userService.update(id ,username, icon, email, password, redes, biografia, status, personalizacao, imgFundo, imgFundoDois, dataCriacao)
+        await userService.update(id ,username, icon, email, password, redes, biografia, status,  corP, corS, favoritados, conquistas, imgFundo, imgFundoDois, dataCriacao)
         return response.status(201).json({
             message: 'Usuários alterado com sucesso',
             body: {
-username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status, personalizacao: personalizacao, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao
+username: username, icon: icon, email: email, password: password, redes: redes, biografia: biografia, status: status,  corP: corP, corS: corS, favoritados: favoritados, conquistas: conquistas, imgFundo: imgFundo, imgFundoDois: imgFundoDois, dataCriacao: dataCriacao
             }
         })
     } catch (e) {
