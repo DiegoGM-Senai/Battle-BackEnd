@@ -24,7 +24,22 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             notNull: true
         },
-        redes: {
+        twitter: {
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        
+        instagram: {
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        
+        discord: {
+            type: Sequelize.STRING,
+            notNull: true
+        },
+        
+        twitch: {
             type: Sequelize.STRING,
             notNull: true
         },
