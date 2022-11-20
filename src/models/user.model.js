@@ -60,11 +60,11 @@ module.exports = (sequelize, Sequelize) => {
             notNull: true
         },
         favoritados:{
-            type: Sequelize.STRING,
+            type: Sequelize.JSON,
             notNull: true
         },
         conquistas:{
-            type: Sequelize.STRING,
+            type: Sequelize.JSON,
             notNull: true
         },
         imgFundo:{
