@@ -7,7 +7,7 @@ const sequelize = new Sequelize({
        username: dbConfig.USER,
         password: dbConfig.PASSWORD,
         host:dbConfig.HOST,
-        port: 5432,
+        port: 7841,
         dialect: dbConfig.DIALECT,
         dialectOptions:{
         ssl:{
