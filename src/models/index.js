@@ -9,11 +9,11 @@ const sequelize = new Sequelize({
         host:dbConfig.HOST,
         port: 7841,
         dialect: dbConfig.DIALECT,
-        dialectOptions:{
-        ssl:{
-            require:true,
-            rejectUnathorized:false
-        }
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
         },
         pool: {
             max: dbConfig.pool.max,
