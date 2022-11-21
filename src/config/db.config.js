@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: "container-us-west-54.railway.app",
+    HOST: "containers-us-west-54.railway.app",
     USER: "postgres",
     PASSWORD: "x58NMXM6DZRn5k4mH5qm",
     DB: "railway",
