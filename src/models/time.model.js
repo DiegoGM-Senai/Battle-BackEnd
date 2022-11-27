@@ -40,6 +40,14 @@ module.exports = (sequelize, Sequelize) => {
         conquistas:{
             type: Sequelize.STRING,
             NotNull: true,
+        },
+        descricao:{
+            type: Sequelize.STRING(1000),
+            NotNull: true,
+        },
+        imgFundo2:{
+            type: Sequelize.STRING(1000),
+            NotNull: true,
         }
 
     },
