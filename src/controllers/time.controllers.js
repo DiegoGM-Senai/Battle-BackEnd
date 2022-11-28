@@ -35,8 +35,8 @@ exports.findByPk = async (request, response) => {
 
 exports.create = async (request, response) => {
     try {
-        const { nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2 } = request.body
-        const time = await TimeService.create( nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2 )
+        const { nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capitao } = request.body
+        const time = await TimeService.create( nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capitao )
         return response.status(201).json({
             message: 'Time cadastrado com sucesso',
             body: {
@@ -51,13 +51,13 @@ exports.create = async (request, response) => {
 exports.update = async (request, response) => {
     try {
         const id = parseInt(request.params.id)
-        const { nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2  } = request.body
+        const { nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capitao  } = request.body
 
-        await TimeService.update( id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2 )
+        await TimeService.update( id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capitao )
         return response.status(201).json({
             message: 'time alterado com sucesso',
             body: {
-                nome:nome, tag:tag ,logo:logo, imgFundo:imgFundo, equipeAtiva:equipeAtiva, reserva:reserva, comissaoTecnica:comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas:conquistas, descricao: descricao, imgFundo2: imgFundo2
+                nome:nome, tag:tag ,logo:logo, imgFundo:imgFundo, equipeAtiva:equipeAtiva, reserva:reserva, comissaoTecnica:comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas:conquistas, descricao: descricao, imgFundo2: imgFundo2, dataCriacao: dataCriacao, donoCriacao: donoCriacao, capitao: capitao
             }
         })
     } catch (e) {
