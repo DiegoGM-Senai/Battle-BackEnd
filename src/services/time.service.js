@@ -14,7 +14,7 @@ exports.findAll = async () => {
 
 exports.findByPk = async(id) => {
     try{
-        const time = await Time.findById(id, {
+        const time = await Time.findByPk(id, {
             attributes:['id', 'nome', 'tag' ,'logo', 'imgFundo', 'equipeAtiva', 'reserva', 'comissaoTecnica', 'jogoPrincipal', 'conquistas', 'descricao', 'imgFundo2', 'dataCriacao', 'donoCriacao', 'capitao']
         })
         return time
