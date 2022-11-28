@@ -53,7 +53,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             NotNull: true,
         },
-        donoCricao:{
+        donoCriacao:{
             type: Sequelize.STRING,
             NotNull: true,
         },
