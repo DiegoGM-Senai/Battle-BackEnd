@@ -48,7 +48,20 @@ module.exports = (sequelize, Sequelize) => {
         imgFundo2:{
             type: Sequelize.STRING(1000),
             NotNull: true,
+        },
+        dataCricao:{
+            type: Sequelize.STRING,
+            NotNull: true,
+        },
+        donoCricao:{
+            type: Sequelize.STRING,
+            NotNull: true,
+        },
+        capitao:{
+            type: Sequelize.STRING,
+            NotNull: true,
         }
+        
 
     },
     
