@@ -49,7 +49,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING(1000),
             NotNull: true,
         },
-        dataCricao:{
+        dataCriacao:{
             type: Sequelize.STRING,
             NotNull: true,
         },
