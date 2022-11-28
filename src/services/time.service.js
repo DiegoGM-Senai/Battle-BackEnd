@@ -15,7 +15,7 @@ exports.findAll = async () => {
 exports.findByPk = async(id) => {
     try{
         const time = await Time.findById(id, {
-            attributes:['id', 'nome', 'tag' ,'logo', 'imgFundo', 'equipeAtiva', 'reserva', 'comissaoTecnica', 'jogoPrincipal', 'conquistas', 'descricao', 'imgFundo2']
+            attributes:['id', 'nome', 'tag' ,'logo', 'imgFundo', 'equipeAtiva', 'reserva', 'comissaoTecnica', 'jogoPrincipal', 'conquistas', 'descricao', 'imgFundo2', 'dataCriacao', 'donoCriacao', 'capitao']
         })
         return time
     }catch(e){
@@ -23,19 +23,19 @@ exports.findByPk = async(id) => {
     }
 }
 
-exports.create = async(nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2) => {
+exports.create = async(nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capitao) => {
     try{
-        const time = await Time.create({nome: nome, tag: tag, logo: logo, imgFundo: imgFundo, equipeAtiva: equipeAtiva, reserva: reserva, comissaoTecnica: comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas: conquistas, descricao: descricao, imgFundo2: imgFundo2})
+        const time = await Time.create({nome: nome, tag: tag, logo: logo, imgFundo: imgFundo, equipeAtiva: equipeAtiva, reserva: reserva, comissaoTecnica: comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas: conquistas, descricao: descricao, imgFundo2: imgFundo2, dataCriacao: dataCriacao, donoCriacao: donoCriacao, capitao: capitao})
         return time
     }catch(e){
         throw Error('Erro ao inserir o time: ' + nome + ' ERROR: ' + e.message)
     }
 }
 
-exports.update = async(id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2) => {
+exports.update = async(id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comissaoTecnica, jogoPrincipal, conquistas, descricao, imgFundo2, dataCriacao, donoCriacao, capita) => {
     try{
         await Time.update({
-            nome: nome, tag: tag, logo: logo, imgFundo: imgFundo, equipeAtiva: equipeAtiva, reserva: reserva, comissaoTecnica: comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas: conquistas, descricao: descricao, imgFundo2: imgFundo2
+            nome: nome, tag: tag, logo: logo, imgFundo: imgFundo, equipeAtiva: equipeAtiva, reserva: reserva, comissaoTecnica: comissaoTecnica, jogoPrincipal: jogoPrincipal, conquistas: conquistas, descricao: descricao, imgFundo2: imgFundo2, dataCriacao: dataCriacao, donoCriacao: donoCriacao, capitao: capitao
         }, {where: {id: id}})
 
     }catch(e){
