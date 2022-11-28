@@ -4,7 +4,7 @@ const Time = db.time
 exports.findAll = async () => {
     try{
         const time = await Time.findAll({
-            attributes:['id', 'nome', 'tag' ,'logo', 'imgFundo', 'equipeAtiva', 'reserva', 'comissaoTecnica', 'jogoPrincipal', 'conquistas', 'descricao', 'imgFundo2']
+            attributes:['id', 'nome', 'tag' ,'logo', 'imgFundo', 'equipeAtiva', 'reserva', 'comissaoTecnica', 'jogoPrincipal', 'conquistas', 'descricao', 'imgFundo2', 'dataCriacao', 'donoCriacao', 'capitao']
         })
         return time
     }catch(e){
