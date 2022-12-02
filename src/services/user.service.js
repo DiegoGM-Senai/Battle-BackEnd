@@ -42,3 +42,14 @@ exports.update = async(id, username, icon, email, password, twitter, instagram, 
         throw Error('Erro ao alterar o usuário: ' + username + ' ERROR: ' + e.message)
     }
 }
+
+exports.delete = async(id) => {
+    try{
+        await User.destroy({
+            where: {id: id}
+        })
+
+    }catch(e){
+        throw Error('Erro ao deletar o time: ' + id + ' ERROR: ' + e.message)
+    }
+}
