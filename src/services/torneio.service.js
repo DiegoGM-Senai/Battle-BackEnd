@@ -42,3 +42,14 @@ exports.update = async (id ,nome, logo, descricaoLonga, descricaoBreve, imgFundo
         throw Error('Erro ao alterar o time: ' + nome + ' ERROR: ' + e.message)
     }
 }
+
+exports.delete = async(id) => {
+    try{
+        await Torneio.destroy({
+            where: {id: id}
+        })
+
+    }catch(e){
+        throw Error('Erro ao deletar o time: ' + id + ' ERROR: ' + e.message)
+    }
+}
