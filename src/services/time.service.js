@@ -42,3 +42,15 @@ exports.update = async(id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comi
         throw Error('Erro ao alterar o time: ' + nome + ' ERROR: ' + e.message)
     }
 }
+
+exports.delete = async(id) => {
+    try{
+        const row = await Time.findByPk({
+          where: { id: id },
+        });
+        await row.destroy()
+
+    }catch(e){
+        throw Error('Erro ao deletar o time: ' + id + ' ERROR: ' + e.message)
+    }
+}
