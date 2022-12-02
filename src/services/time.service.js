@@ -45,10 +45,9 @@ exports.update = async(id, nome, tag ,logo, imgFundo, equipeAtiva, reserva, comi
 
 exports.delete = async(id) => {
     try{
-        const row = await Time.findByPk({
-          where: { id: id },
-        });
-        await row.destroy()
+        await Time.destroy({
+            where: {id: id}
+        })
 
     }catch(e){
         throw Error('Erro ao deletar o time: ' + id + ' ERROR: ' + e.message)
