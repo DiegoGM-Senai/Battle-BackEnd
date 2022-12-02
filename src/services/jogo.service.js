@@ -42,3 +42,14 @@ exports.update = async (id, titulo, descricao, imgHover, img) => {
         throw Error('Erro ao alterar o usuário: ' + titulo + ' ERROR: ' + e.message)
     }
 }
+
+exports.delete = async(id) => {
+    try{
+        await Jogo.destroy({
+            where: {id: id}
+        })
+
+    }catch(e){
+        throw Error('Erro ao deletar o time: ' + id + ' ERROR: ' + e.message)
+    }
+}
