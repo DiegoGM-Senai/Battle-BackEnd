@@ -35,8 +35,8 @@ exports.findByPk = async (request, response) => {
 
 exports.create = async (request, response) => {
     try {
-        const { nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes } = request.body
-        const torneio = await torneioService.create(nome, logo, descricaoLonga, descricaoBreve, imgFundo,  thumbnail, participantes, gameId, chave, quantiaParticipantes)
+        const { nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes, donoCriacao, admins } = request.body
+        const torneio = await torneioService.create(nome, logo, descricaoLonga, descricaoBreve, imgFundo,  thumbnail, participantes, gameId, chave, quantiaParticipantes, donoCriacao, admins)
         return response.status(201).json({
             message: 'Torneio cadastrado com sucesso',
             body: {
@@ -54,9 +54,9 @@ exports.create = async (request, response) => {
 exports.update = async (request, response) => {
     try {
         const id = parseInt(request.params.id)
-        const { nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes } = request.body
+        const { nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes, donoCriacao, admins } = request.body
 
-        await torneioService.update(id, nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes)
+        await torneioService.update(id, nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes, donoCriacao, admins)
         return response.status(201).json({
             message: 'torneio alterado com sucesso',
             body: {
@@ -70,6 +70,8 @@ exports.update = async (request, response) => {
                 gameId: gameId,
                 chave: chave,
                 quantiaParticipantes: quantiaParticipantes,
+                donoCriacao: donoCriacao, 
+                admins: admins
             }
         })
     } catch (e) {
