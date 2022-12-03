@@ -45,6 +45,14 @@ module.exports = (sequelize, Sequelize) => {
         quantiaParticipantes: {
             type: Sequelize.INTEGER,
             NotNull: true
+        },
+        donoCriacao: {
+            type: Sequelize.INTEGER,
+            NotNull: true
+        },
+        admins: {
+            type: Sequelize.INTEGER,
+            NotNull: true
         }
     },
     {
