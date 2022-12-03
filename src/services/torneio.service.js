@@ -4,7 +4,7 @@ const Torneio = db.torneio
 exports.findAll = async () => {
     try {
         const torneio = await Torneio.findAll({
-            attributes: ['id', "nome", 'logo', 'descricaoLonga', 'descricaoBreve', 'imgFundo',  'thumbnail', 'participantes', 'gameId']
+            attributes: ['id', "nome", 'logo', 'descricaoLonga', 'descricaoBreve', 'imgFundo',  'thumbnail', 'participantes', 'gameId', 'chave', 'quantiaParticipantes']
         })
         return torneio
     } catch (e) {
@@ -15,7 +15,7 @@ exports.findAll = async () => {
 exports.findByPk = async (id) => {
     try {
         const torneio = await Torneio.findByPk(id, {
-            attributes: ['id', "nome", 'logo', 'descricaoLonga', 'descricaoBreve', 'imgFundo',  'thumbnail', 'participantes', 'gameId']
+            attributes: ['id', "nome", 'logo', 'descricaoLonga', 'descricaoBreve', 'imgFundo',  'thumbnail', 'participantes', 'gameId', 'chave', 'quantiaParticipantes']
         })
         return torneio
     } catch (e) {
@@ -23,19 +23,19 @@ exports.findByPk = async (id) => {
     }
 }
 
-exports.create = async (nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId) => {
+exports.create = async (nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes) => {
     try {
-        const torneio = await Torneio.create({ nome: nome, logo: logo, imgFundo: imgFundo, descricaoLonga: descricaoLonga, descricaoBreve: descricaoBreve, thumbnail: thumbnail, participantes: participantes, gameId: gameId})
+        const torneio = await Torneio.create({ nome: nome, logo: logo, imgFundo: imgFundo, descricaoLonga: descricaoLonga, descricaoBreve: descricaoBreve, thumbnail: thumbnail, participantes: participantes, gameId: gameId, chave: chave, quantiaParticipantes: quantiaParticipantes})
         return torneio
     } catch (e) {
         return e.message
     }
 }
 
-exports.update = async (id ,nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId) => {
+exports.update = async (id ,nome, logo, descricaoLonga, descricaoBreve, imgFundo, thumbnail, participantes, gameId, chave, quantiaParticipantes) => {
     try {
         await Torneio.update({
-            nome: nome, logo: logo, imgFundo: imgFundo, descricaoLonga: descricaoLonga, descricaoBreve: descricaoBreve, thumbnail: thumbnail, participantes: participantes, gameId: gameId
+            nome: nome, logo: logo, imgFundo: imgFundo, descricaoLonga: descricaoLonga, descricaoBreve: descricaoBreve, thumbnail: thumbnail, participantes: participantes, gameId: gameId, chave: chave, quantiaParticipantes: quantiaParticipantes
         }, { where: { id: id } })
 
     } catch (e) {
