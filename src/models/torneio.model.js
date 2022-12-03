@@ -15,11 +15,11 @@ module.exports = (sequelize, Sequelize) => {
             NotNull: true,
         },
         descricaoLonga:{
-            type: Sequelize.STRING,
+            type: Sequelize.STRING(3000),
             NotNull: true,
         },
         descricaoBreve:{
-            type: Sequelize.STRING,
+            type: Sequelize.STRING(1000),
             NotNull: true,
         },
         imgFundo:{
