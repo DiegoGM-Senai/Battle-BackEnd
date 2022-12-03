@@ -37,12 +37,15 @@ module.exports = (sequelize, Sequelize) => {
         gameId: {
             type: Sequelize.INTEGER,
             NotNull: true
+        },
+        chave: {
+            type: Sequelize.STRING,
+            NotNull: true,
+        },
+        quantiaParticipantes: {
+            type: Sequelize.INTEGER,
+            NotNull: true
         }
-        // inscricoesTime:{
-
-        // },jogo:{
-
-        // }
     },
     {
         timestamps: false,
