@@ -47,11 +47,11 @@ module.exports = (sequelize, Sequelize) => {
             NotNull: true
         },
         donoCriacao: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
             NotNull: true
         },
         admins: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
             NotNull: true
         }
     },
